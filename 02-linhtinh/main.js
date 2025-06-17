@@ -1,22 +1,23 @@
 const app = Vue.createApp({
   data() {
     return {
-      x: 0,
-      y: 0,
+        products: [
+            {
+                name: 'Product 1',
+                price: 100,
+            },
+            {
+                name: 'Product 2',
+                price: 100,
+            },
+            {
+                name: 'Product 3',
+                price: 100,
+            },
+        ]
     };
   },
-  methods: {
-    onLogEvent(Event, newX, newY) {
-      console.log("Mouse event: ", event);
-      this.x = newX;
-      this.y = newY;
-    },
-    onMouseMove(event) {
-      console.log("Mouse move event: ", event);
-      this.x = event.offsetX;
-      this.y = event.offsetY;
-    },
-  },
+  methods: {},
 });
 
-app.mounted("#contact");
+app.mount('#contact')
