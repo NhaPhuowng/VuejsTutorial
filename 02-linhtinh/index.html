@@ -41,7 +41,7 @@
     <section id="contact">
       <div class="card-products card-container" :class="classTest">
         <div class="card" 
-        v-for="product in products"
+        v-for="product in filterProducts"
         :class="{cart: product.isCart}"
         @dblclick="onToggleCart($event, product)">
           <img class="card-thumb" v-bind:src="product.thumb">

@@ -13,13 +13,13 @@ const app = Vue.createApp({
             {
                 thumb:"./assets/p2.png",
                 name: 'Product 2',
-                price: 100,
+                price: 180,
                 isCart: false,
             },
             {
                 thumb:"./assets/p3.png",
                 name: 'Product 3',
-                price: 100,
+                price: 120,
                 isCart: true,
             },
         ]
@@ -30,6 +30,11 @@ const app = Vue.createApp({
       product.isCart = !product.isCart
     }
   },
+  computed:{
+    filterProducts() {
+        return this.products.filter(product => product.price < 160)  
+    }
+  }, 
 });
 
 app.mount('#contact')
