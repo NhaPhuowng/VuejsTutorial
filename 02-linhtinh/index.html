@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linh tinh Vue 3</title>
+    <style>
+      .card {
+        width: 80px;
+        height: 80px;
+        background-color: #f0f0f0;
+        border: 1px solid #852828;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Hello vue 3</h1>
+    <section id="contact">
+      <div class="card-container">
+        <div class="card" @mouseover="onLogEvent">Move over (Enter)</div>
+        <div class="card" @mouseleave="onLogEvent">Mouse leave</div>
+        <div class="card" @dblclick="onLogEvent($event, 150, 100)">Double Click</div>
+        <div class="card" @mousemove="onMouseMove">Mouse Move: {{`${x}-${y}`}}</div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/vue@next" type="text/javascript"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
