@@ -7,9 +7,8 @@
     <title>Linh tinh Vue 3</title>
     <style>
       .card {
-        width: fit-content
-        ;
-        height: 80px;
+        width: fit-content;
+        flex-direction: column;
         background-color: #f0f0f0;
         border: 1px solid #852828;
         border-radius: 8px;
@@ -19,11 +18,20 @@
         margin: 10px;
       }
 
+      .card-products {
+        display: flex;
+        flex-direction: row;
+      }
+
       .card-thumb {
         width: 80px;
         height: 80px;
         border-radius: 90%;
         margin-right: 10px;
+      }
+
+      .card .cart {
+        background:#2a665b
       }
     </style>
   </head>
@@ -32,7 +40,10 @@
     <h1>Hello vue 3</h1>
     <section id="contact">
       <div class="card-products card-container" :class="classTest">
-        <div class="card" v-for="product in products">
+        <div class="card" 
+        v-for="product in products"
+        :class="{cart: product.isCart}"
+        @dblclick="onToggleCart($event, product)">
           <img class="card-thumb" v-bind:src="product.thumb">
           <h3>{{product.name}}</h3>
           <p>{{product.price}}</p>
