@@ -7,7 +7,8 @@
     <title>Linh tinh Vue 3</title>
     <style>
       .card {
-        width: fit-content;
+        width: fit-content
+        ;
         height: 80px;
         background-color: #f0f0f0;
         border: 1px solid #852828;
@@ -17,14 +18,22 @@
         justify-content: center;
         margin: 10px;
       }
+
+      .card-thumb {
+        width: 80px;
+        height: 80px;
+        border-radius: 90%;
+        margin-right: 10px;
+      }
     </style>
   </head>
 
   <body>
     <h1>Hello vue 3</h1>
     <section id="contact">
-      <div class="card-products card-container">
+      <div class="card-products card-container" :class="classTest">
         <div class="card" v-for="product in products">
+          <img class="card-thumb" v-bind:src="product.thumb">
           <h3>{{product.name}}</h3>
           <p>{{product.price}}</p>
         </div>
